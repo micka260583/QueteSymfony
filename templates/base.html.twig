@@ -9,16 +9,17 @@
         {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
         {% endblock %}
+        <link rel="icon" href="{{ asset('build/favicon.png') }}">
 
         {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body style="padding-top: 80px;">
+    <body style="padding-top: 90px;">
         {% block header %}{% endblock %}{% include "_navbar.html.twig" %}
 
         {% block body %}
-        <img src="{{ asset('build/path_to_image.png') }}" alt=""/>
+        
         {% endblock %}
     </body>
 </html>

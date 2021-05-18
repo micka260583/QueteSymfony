@@ -1,18 +1,23 @@
 {% block header %}
 <nav class="navbar navbar-expand-lg navbar navbar-dark fixed-top" style="background-color:#5E81FF">
     <div class="container-fluid">
+        <img src="{{ asset('build/favicon.png') }}" alt="" width="70" height="70"/>
         <h1 class="logo">Wild Séries</h1>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <div class="me-auto mb-2 mb-lg-0 mx-auto">
-                <button class="nav-item" style="background-color:#54F0FA">
+            <div class="me-auto mb-2 mb-lg-0 mx-auto d-flex justify-content-between flex-wrap">
+                <button class="btn btn-outline-success" style="background-color:#54F0FA">
                     <a class="nav-link active" style="color:#000a0a" aria-current="page " href="/">Accueil</a>
                 </button>
-                <button class="nav-item" style="background-color:#54F0FA">
+                <button class="btn btn-outline-success" style="background-color:#54F0FA">
                     <a class="nav-link active " style="color:#000a0a" aria-current="page " href="">S'enregistrer</a>
                 </button>
-                <button class="nav-item" style="background-color:#54F0FA">
+                <button class="btn btn-outline-success" style="background-color:#54F0FA">
                     <a class="nav-link active " style="color:#000a0a" aria-current='page' href="/">S'identifier</a>
                 </button>
+                <form class="d-flex">
+                    <input class="form-control mx-2" type="search" placeholder="Recherche" aria-label="Search">
+                    <button class="btn btn-outline-success" style="background-color:#54F0FA" type="submit">Recherche</button>
+                  </form>
             </div>
         </div>
     </div>

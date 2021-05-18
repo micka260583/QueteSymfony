@@ -5,25 +5,19 @@ body {
     font-family: "Comic Sans MS";
 }
 
-@media only screen and (min-device-width: 768px) {
-    .back-to-top {
-        position: fixed;
-        bottom: 15px;
-        right: 25px;
-        display: none;
-        z-index: 6;
-        height: 55px;
-        width: 55px;
-    }
-}
-
 .logo{
     font-family: "Comic Sans MS";
     display: flex;
     padding-top: 0.5%;
 }
 
-.nav-item {
-    outline-offset: -5px
+.btn-outline-success {
+    margin-left: 5px;
+    margin-right: 5px;
 
+}
+
+.Bienvenue {
+    display: flex;
+    justify-content: center;
 }
