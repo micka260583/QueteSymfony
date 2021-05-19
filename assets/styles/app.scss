@@ -11,13 +11,19 @@ body {
     padding-top: 0.5%;
 }
 
+.nav-link,
 .btn-outline-success {
     margin-left: 5px;
     margin-right: 5px;
+    color:#000a0a;
 
 }
 
 .Bienvenue {
     display: flex;
     justify-content: center;
+}
+
+.form-control {
+    width: 300px;
 }
