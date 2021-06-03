@@ -17,7 +17,7 @@
     {% endfor %}
     </div>
   </div>
-  <a href="{{ path('program_index') }}">
-      Retour à la liste des programmes
+  <a href="{{ path('program_show', {program_id: program.id}) }}">
+      Retour à la fiche de {{ program.title }}
   </a>
 {% endblock %}

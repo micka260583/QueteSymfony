@@ -3,7 +3,25 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-<h1 class="Bienvenue">Bienvenue !</h1>
-<a href="{{ path('program_index') }}">Afficher les séries</a> </br>
-<a href="{{ path('category_index') }}">Afficher les categories</a>
+    <h1 class="Bienvenue">Bienvenue !</h1>
+    <div class="container mt-5 pb-5">
+        <div class='row row-cols-2 g-0 justify-content-around text-center'>
+            <div class="card bg-dark" style="width: 30%;">
+                <img src="{{ asset('build/serie.jpg') }}" class="card-img-top" style="height: 90%" alt="...">
+                    <div class="card-body">
+                        <div class="neon p-2">
+                            <a class="neon1"  href="{{ path('program_index') }}">Affich<span class="first">er les sé</span>ries</a>
+                        </div>                
+                    </div>
+            </div>
+                <div class="card bg-dark" style="width: 30%;">
+                    <img src="{{ asset('build/categorie.png') }}" class="card-img-top" style="height: 90%" alt="...">
+                        <div class="card-body">
+                            <div class="neon p-2">
+                                <a class="neon1"  href="{{ path('category_index') }}">Affich<span class="first">er les ca</span>tégories</a>
+                            </div>            
+                        </div>
+                </div>
+        </div>
+    </div>
 {% endblock %}

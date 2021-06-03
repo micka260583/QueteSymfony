@@ -1,16 +1,15 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    background-color: rgb(240, 240, 250);
+    
     font-family: "Comic Sans MS";
 }
 
-.logo{
-    font-family: "Comic Sans MS";
-    display: flex;
-    padding-top: 0.5%;
-}
 
+/*------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------*/
 .nav-link,
 .btn-outline-success {
     margin-left: 5px;
@@ -235,64 +234,141 @@ body {
     }
   }
 
-  /*-------------------*/
+  /*---------------------------------------------------*/
 
-  .wrapper {
-    margin: 0 auto;
-    max-width: 60rem;
-    padding: 2rem;
-    text-align: center;
-    
-    .gallery-container {
-      background: #ffcc00;
-      border-radius: 0.5rem;
-      padding: 1rem;
-      margin: 2rem 0;
-      
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        
-        li img {
-          display: block;
-          height: auto;
-          max-width: 100%;
-        }
-      }
+  .logo1{
+    font-family: "Comic Sans MS";
+    font-size: 2.5em;
+    color: #5E81FF;
+}
+  
+  .logo .logo1 {
+    animation: text-flick 5s linear infinite;
+  }
+  
+  .logo .first {
+    animation: letter-flick 3s linear infinite;
+    color:#5E81FF;
+  }
+  
+  @keyframes text-flick {
+    2% { 
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
+    }
+    3% {
+      color: white;
+      text-shadow: none;
+    }
+    6% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
+    }
+    9% {
+      color: #5E81FF;
+      text-shadow: none;
+    }
+    11% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
+    }
+    14% {
+      color: white;
+      text-shadow: none;
+    }
+    18% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
+    }
+    32% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
+    }
+    33% {
+      color: white;
+      text-shadow: none;
+    }
+    37% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
+    }
+    39% {
+      color: #5E81FF;
+      text-shadow: none;
+    }
+    43% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
+    }
+    46% {
+      color: white;
+      text-shadow: none;
+    }
+    47% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
+    }
+    100% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
     }
   }
   
-  .gallery-container ul {
-    
-    &.masonry-gallery {
-      columns: 12rem;
-      column-gap: 1rem;
-  
-      li {
-        break-inside: avoid;
-        margin: 0 0 1rem;
-      }
+  @keyframes letter-flick {
+      2% { 
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
     }
-    
-    &.mosaic-gallery {
-      display: flex;
-        flex-wrap: wrap;
-      margin: 0 -0.5rem;
-  
-      li {
-        background-position: center center;
-        background-size: cover;
-        flex: auto;
-        height: 15vw;
-        margin: 0 0.5rem 1rem;
-        max-height: 10rem;
-  
-        img {
-          height: 100%;
-          opacity: 0;
-        }
-      }
+    3% {
+      color: #5E81FF;
+      text-shadow: none;
+    }
+    6% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
+    }
+    9% {
+      color: white;
+      text-shadow: none;
+    }
+    11% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
+    }
+    14% {
+      color: #5E81FF;
+      text-shadow: none;
+    }
+    18% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
+    }
+    32% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
+    }
+    33% {
+      color: white;
+      text-shadow: none;
+    }
+    37% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
+    }
+    39% {
+      color: #5E81FF;
+      text-shadow: none;
+    }
+    40% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
+    }
+    100% {
+      color: rgb(230, 0, 120);
+      text-shadow: 0 0 15px rgb(230, 0, 120);
     }
   }
+
+  /*------------------------------------*/
+
   
