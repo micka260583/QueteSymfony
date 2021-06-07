@@ -29,7 +29,7 @@ class Category
      */
     private $programs;
 
-    private function __construct()
+    public function __construct()
 
     {
         $this->programs = new ArrayCollection();

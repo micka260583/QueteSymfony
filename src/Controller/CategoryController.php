@@ -7,6 +7,9 @@ use App\Entity\Program;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Form\CategoryType;
+use Symfony\Component\HttpFoundation\Request;
+
 
 /**
  * @route("/categories", name="category_")
@@ -25,40 +28,62 @@ class CategoryController extends AbstractController
             ->findAll();
 
         return $this->render(
-            'category/index.html.twig', 
+            'category/index.html.twig',
             ['categories' => $categories]
         );
     }
+    /**
+     * @Route("/new", name = "new")
+     */
+    public function new(Request $request) : Response
+    {
+        $category = new Category();
+        $form = $this->createForm(CategoryType::class, $category);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($category);
+            $entityManager->flush();
 
-     /**
-    * @Route("/{categoryName}", name="show")
-    *
-    * @param string $categoryName
-    * @return Response
-    */
-public function show(string $categoryName): Response
-{
-    $category = $this->getDoctrine()
-        ->getRepository(Category::class)
-        ->findOneBy(['name' => $categoryName]);
+            return $this->redirectToRoute('category_index');
+        }
 
-    if (!$category) {
-        throw $this->createNotFoundException(
-            "No category with id : ".$categoryName." found in program's table."
-        );
+        return $this->render('category/new.html.twig', [
+            "form" => $form->createView(),
+        ]);
     }
 
-    $programs = $this->getDoctrine()
-    ->getRepository(Program::class)
-    ->findby([
-        'category' => $category->getId()
-    ],
-    [
-        'id' => 'DESC'
-    ],
-    3);
-    return $this->render('category/show.html.twig', [
-        'programs' => $programs,
-    ]);
-}
+    /**
+     * @Route("/{categoryName}", name="show")
+     *
+     * @param string $categoryName
+     * @return Response
+     */
+    public function show(string $categoryName): Response
+    {
+        $category = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->findOneBy(['name' => $categoryName]);
+
+        if (!$category) {
+            throw $this->createNotFoundException(
+                "No category with id : " . $categoryName . " found in program's table."
+            );
+        }
+
+        $programs = $this->getDoctrine()
+            ->getRepository(Program::class)
+            ->findby(
+                [
+                    'category' => $category->getId()
+                ],
+                [
+                    'id' => 'DESC'
+                ],
+                3
+            );
+        return $this->render('category/show.html.twig', [
+            'programs' => $programs,
+        ]);
+    }
 }
