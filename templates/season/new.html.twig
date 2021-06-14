@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle saison{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mt-5 mb-5 text-uppercase">AJOUTER UNE SAISON</h1>
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+            <div class="mb-3 text-center">Numéro de la saison</div>
+            <div class="text-end">{{ form_errors(form.number) }}</div>
+            <div class="mb-3">{{ form_widget(form.number) }}</div>
+            <div class="mb-3 text-center">Année</div>
+            <div class="text-end">{{ form_errors(form.year) }}</div>
+            <div class="mb-3">{{ form_widget(form.year) }}</div>
+            <div class="mb-3 text-center">Description</div>
+            <div class="text-end">{{ form_errors(form.description) }}</div>
+            <div class="mb-3">{{ form_widget(form.description) }}</div>
+            <div class="mb-3 text-center">Série</div>
+            <div class="text-end">{{ form_errors(form.program) }}</div>
+            <div class="mb-3">{{ form_widget(form.program) }}</div>
+            {{ include('season/_form.html.twig') }}
+        {{ form_end(form) }}
+</div>
+
+    <a href="{{ path('season_index') }}">retour à la liste des saisons</a>
+{% endblock %}

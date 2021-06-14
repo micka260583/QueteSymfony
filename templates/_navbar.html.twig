@@ -12,16 +12,24 @@
                 <button class="btn btn-outline-success" style="background-color:#54F0FA">
                     <a class="nav-link active" aria-current="page " href="/">Accueil</a>
                 </button>
-                <button class="btn btn-outline-success" style="background-color:#54F0FA">
-                    <a class="nav-link active" aria-current="page " href="{{ path('category_new') }}">Ajouter une catégorie</a>
-                </button>
-                <button class="btn btn-outline-success" style="background-color:#54F0FA">
-                    <a class="nav-link active" aria-current='page' href="{{ path('program_new') }}">Ajouter une série</a>
-                </button>
+            
+                
+                <div class="dropdown">
+                    <button class="btnadmin btn-outline-success dropdown-toggle" type="button"  data-bs-toggle="dropdown" aria-expanded="false" style="background-color:#54F0FA">
+                      Ajout/Admin
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="{{ path('category_new') }}">Ajouter une catégorie</a></li>
+                      <li><a class="dropdown-item" href="{{ path('program_new') }}">Ajouter une série</a></li>
+                      <li><a class="dropdown-item" href="{{ path('season_new') }}">Ajouter une saison</a></li>
+                      <li><a class="dropdown-item" href="{{ path('episode_new') }}">Ajouter un épisode</a></li>
+                    </ul>
+                  </div>
+                
                 <form class="d-flex">
                     <input class="form-control mx-2" type="search" placeholder="Recherche" aria-label="Search">
                     <button class="btn btn-outline-success" style="background-color:#54F0FA" type="submit">Recherche</button>
-                  </form>
+                </form>
             </div>
         </div>
     </div>

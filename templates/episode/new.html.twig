@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau épisode{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center mt-5 mb-5 text-uppercase">AJOUTER UN ÉPISODE</h1>
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                <div class="mb-3 text-center">Titre de l'épisode</div>
+                <div class="text-end">{{ form_errors(form.title) }}</div>
+                <div class="mb-3">{{ form_widget(form.title) }}</div>
+                <div class="mb-3 text-center">Numéro</div>
+                <div class="text-end">{{ form_errors(form.number) }}</div>
+                <div class="mb-3">{{ form_widget(form.number) }}</div>
+                <div class="mb-3 text-center">Synopsis</div>
+                <div class="text-end">{{ form_errors(form.synopsis) }}</div>
+                <div class="mb-3">{{ form_widget(form.synopsis) }}</div>
+                <div class="mb-3 text-center">Saison</div>
+                <div class="text-end">{{ form_errors(form.season) }}</div>
+                <div class="mb-3">{{ form_widget(form.season) }}</div>
+
+        {{ include('episode/_form.html.twig') }}
+    {{ form_end(form) }}
+</div>
+
+    <a href="{{ path('episode_index') }}">back to list</a>
+{% endblock %}
