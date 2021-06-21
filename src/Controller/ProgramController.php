@@ -20,7 +20,6 @@ class ProgramController extends AbstractController
 {
     /**
      * Show all rows from Program's entity
-     * 
      * @Route("/", name="index")
      * @return Response
      */
@@ -43,7 +42,7 @@ class ProgramController extends AbstractController
      */
     public function new(Request $request) : Response
     {
-        
+
         $program = new Program();
         $form = $this->createForm(ProgramType::class, $program);
         $form->handleRequest($request);
